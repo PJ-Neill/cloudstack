@@ -14,7 +14,7 @@ export default function Home() {
 
         <div className="hidden md:flex flex-col items-center gap-3 flex-shrink-0">
           <div className="w-40 h-40 rounded-full overflow-hidden" style={{ border: '3px solid rgba(0,120,212,0.5)', boxShadow: '0 0 32px rgba(0,98,245,0.3)' }}>
-            <Image src="/avatar.png" alt="PJ Neill" width={160} height={160} style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: '100%' }} />
+            <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/avatar.png`} alt="PJ Neill" width={160} height={160} style={{ objectFit: 'cover', objectPosition: 'top', width: '100%', height: '100%' }} />
           </div>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-faint)' }}>// by PJ Neill</span>
         </div>
