@@ -69,7 +69,7 @@ export default function BlogGrid() {
             <div className="p-6 flex flex-col flex-1">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0" style={{ border: '1px solid rgba(0,98,245,0.3)' }}>
-                  <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/avatar.png`} alt="PJ Neill" width={32} height={32} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                  <Image src="/avatar.png" alt="PJ Neill" width={32} height={32} style={{ objectFit: 'cover', objectPosition: 'top' }} />
                 </div>
                 <span style={{ color: 'var(--text-subtle)', fontFamily: 'var(--font-mono)', fontSize: '12px' }}>
                   Cloud Stack · {post.date} · {post.readTime}
