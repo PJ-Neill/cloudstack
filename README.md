@@ -1,6 +1,6 @@
 # Cloud Stack — Next.js Blog
 
-A production-ready Next.js 14 blog site for Azure & Microsoft Cloud content, inspired by the layout and structure of 9to5azure.com.
+A production-ready Next.js 14 blog site for Azure & Microsoft Cloud content.
 
 ## Tech stack
 
