@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Read(//c/Users/pjnei/Downloads/**)",
+      "Bash(find /c/Projects/cloudstack -type d -name *blog* -o -type d -name *content* -o -type d -name *posts*)",
+      "Bash(find /c/Projects/cloudstack/src -type f \\\\\\(-name *.md -o -name *.mdx -o -name *.json \\\\\\))",
+      "Bash(npx tsc:*)",
+      "Bash(python -m json.tool)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\pjnei\\Downloads"
+    ]
+  }
+}
