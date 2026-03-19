@@ -16,15 +16,27 @@ export default function AvsGen1VsGen2Content() {
       <h2 style={h2}>Gen 1 vs Gen 2: Side by Side</h2>
       <p style={p}>The diagrams below show the most fundamental change — the shift from a dedicated ExpressRoute circuit inside AVS in Gen 1, to native Virtual Network integration in Gen 2:</p>
 
-      <div style={{ margin: '1.5rem 0 1rem' }}>
-        <img
-          src="https://learn.microsoft.com/en-us/azure/azure-vmware/media/native-connectivity/native-connect-on-premises.png"
-          alt="Azure VMware Solution Gen 2 native Virtual Network connectivity diagram"
-          style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
-        />
-        <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
-          Gen 2 — Native Azure VNet Integration · Source: Microsoft Learn
-        </p>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1.5rem 0 2rem' }}>
+        <div>
+          <img
+            src="/avs-gen1-diagram.png"
+            alt="Azure VMware Solution Gen 1 - ExpressRoute networking diagram"
+            style={{ width: '100%', height: '240px', objectFit: 'cover', objectPosition: 'top', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
+          />
+          <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)', lineHeight: 1.4 }}>
+            // Gen 1 — Dedicated AVS ExpressRoute Circuit
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://learn.microsoft.com/en-us/azure/azure-vmware/media/native-connectivity/native-connect-on-premises.png"
+            alt="Azure VMware Solution Gen 2 native Virtual Network connectivity diagram"
+            style={{ width: '100%', height: '240px', objectFit: 'cover', objectPosition: 'top', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
+          />
+          <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)', lineHeight: 1.4 }}>
+            // Gen 2 — Native Azure VNet Integration · Source: Microsoft Learn
+          </p>
+        </div>
       </div>
 
       <p style={p}>Here&apos;s how the two generations compare across the key dimensions:</p>

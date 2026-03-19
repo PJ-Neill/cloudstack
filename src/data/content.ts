@@ -30,7 +30,7 @@ export const posts: Post[] = [
     date: 'Mar 19, 2026',
     readTime: '7 min read',
     tags: ['Azure VMware Solution'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    image: '/avs-cover.jpg',
   },
   {
     slug: 'azure-landing-zones-enterprise',
