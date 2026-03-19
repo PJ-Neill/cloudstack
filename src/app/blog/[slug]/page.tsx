@@ -3,6 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { posts } from '@/data/content'
+import AvsGen1VsGen2Content from '@/data/posts/avs-gen1-vs-gen2'
+
+const postContent: Record<string, React.ComponentType> = {
+  'avs-gen1-vs-gen2': AvsGen1VsGen2Content,
+}
 
 export async function generateStaticParams() {
   return posts.map(p => ({ slug: p.slug }))
@@ -53,29 +58,35 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       {/* Article body */}
       <div className="max-w-3xl mx-auto px-6">
         <div style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.85 }}>
-          <p style={{ marginBottom: '20px' }}>
-            This is where the full article content would appear. In a production version of this site, you would store article content in MDX files, a CMS like Sanity or Contentful, or a database — and render it here.
-          </p>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', margin: '36px 0 16px', letterSpacing: '-0.02em' }}>Getting started</h2>
-          <p style={{ marginBottom: '20px' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <div className="rounded-xl p-5 my-6" style={{ background: 'rgba(0,98,245,0.08)', border: '1px solid rgba(0,98,245,0.2)', borderLeft: '3px solid #0062f5' }}>
-            <p style={{ fontSize: '15px', color: '#0062f5', margin: 0 }}>
-              <strong>Pro tip:</strong> When deploying to production, always validate your Azure Policy assignments against a non-production environment first.
-            </p>
-          </div>
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', margin: '36px 0 16px', letterSpacing: '-0.02em' }}>Key considerations</h2>
-          <p style={{ marginBottom: '20px' }}>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <pre style={{ background: 'var(--surface-card)', border: '1px solid var(--border-card)', borderRadius: '12px', padding: '20px', overflowX: 'auto', fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#0062f5', margin: '24px 0' }}>
+          {postContent[post.slug] ? (
+            (() => { const Content = postContent[post.slug]; return <Content /> })()
+          ) : (
+            <>
+              <p style={{ marginBottom: '20px' }}>
+                This is where the full article content would appear. In a production version of this site, you would store article content in MDX files, a CMS like Sanity or Contentful, or a database — and render it here.
+              </p>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', margin: '36px 0 16px', letterSpacing: '-0.02em' }}>Getting started</h2>
+              <p style={{ marginBottom: '20px' }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <div className="rounded-xl p-5 my-6" style={{ background: 'rgba(0,98,245,0.08)', border: '1px solid rgba(0,98,245,0.2)', borderLeft: '3px solid #0062f5' }}>
+                <p style={{ fontSize: '15px', color: '#0062f5', margin: 0 }}>
+                  <strong>Pro tip:</strong> When deploying to production, always validate your Azure Policy assignments against a non-production environment first.
+                </p>
+              </div>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', margin: '36px 0 16px', letterSpacing: '-0.02em' }}>Key considerations</h2>
+              <p style={{ marginBottom: '20px' }}>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <pre style={{ background: 'var(--surface-card)', border: '1px solid var(--border-card)', borderRadius: '12px', padding: '20px', overflowX: 'auto', fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#0062f5', margin: '24px 0' }}>
 {`# Example Azure CLI command
 az deployment group create \\
   --resource-group myResourceGroup \\
   --template-file main.bicep \\
   --parameters @params.json`}
-          </pre>
+              </pre>
+            </>
+          )}
         </div>
 
         {/* Tags */}

@@ -24,6 +24,15 @@ export const placeholderTags = ['Azure VMware Solution', 'Microsoft Foundry']
 
 export const posts: Post[] = [
   {
+    slug: 'avs-gen1-vs-gen2',
+    title: 'Azure VMware Solution: Gen 1 vs Gen 2 - What\'s Actually Changed?',
+    excerpt: 'Azure VMware Solution Generation 2 now deploys inside an Azure Virtual Network. Here\'s what\'s changed, what to watch out for, and whether you should move.',
+    date: 'Mar 19, 2026',
+    readTime: '7 min read',
+    tags: ['Azure VMware Solution'],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+  },
+  {
     slug: 'azure-landing-zones-enterprise',
     title: 'Azure Landing Zones: A Practical Guide for Enterprise Adoption',
     excerpt: 'Landing zones are the foundation of a scalable Azure environment. Here\'s how to design one that grows with your organisation.',
