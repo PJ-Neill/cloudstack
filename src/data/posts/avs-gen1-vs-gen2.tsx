@@ -1,6 +1,26 @@
+'use client'
+import { useState, useEffect } from 'react'
+
 export default function AvsGen1VsGen2Content() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
     <div style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.85 }}>
+
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out' }}
+        >
+          <img src={lightbox.src} alt={lightbox.alt} style={{ maxWidth: '92vw', maxHeight: '88vh', borderRadius: '10px', border: '1px solid var(--border-card)', boxShadow: '0 0 60px rgba(0,0,0,0.8)' }} />
+        </div>
+      )}
 
       <h2 style={h2}>A Bit of Background</h2>
       <p style={p}>
@@ -18,23 +38,37 @@ export default function AvsGen1VsGen2Content() {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1.5rem 0 2rem' }}>
         <div>
-          <img
-            src="/avs-gen1-diagram.png"
-            alt="Azure VMware Solution Gen 1 - ExpressRoute networking diagram"
-            style={{ width: '100%', height: '240px', objectFit: 'cover', objectPosition: 'top', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
-          />
+          <div
+            style={{ height: '240px', overflow: 'hidden', borderRadius: '10px', border: '1px solid var(--border-card)', cursor: 'zoom-in' }}
+            onClick={() => setLightbox({ src: '/avs-gen1-diagram.png', alt: 'Azure VMware Solution Gen 1 - ExpressRoute networking diagram' })}
+          >
+            <img
+              src="/avs-gen1-diagram.png"
+              alt="Azure VMware Solution Gen 1 - ExpressRoute networking diagram"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block', transition: 'transform 0.3s ease' }}
+              onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.03)')}
+              onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
+            />
+          </div>
           <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)', lineHeight: 1.4 }}>
-            // Gen 1 — Dedicated AVS ExpressRoute Circuit
+            // Gen 1 — Dedicated AVS ExpressRoute Circuit · <span style={{ color: '#60a5fa' }}>click to zoom</span>
           </p>
         </div>
         <div>
-          <img
-            src="https://learn.microsoft.com/en-us/azure/azure-vmware/media/native-connectivity/native-connect-on-premises.png"
-            alt="Azure VMware Solution Gen 2 native Virtual Network connectivity diagram"
-            style={{ width: '100%', height: '240px', objectFit: 'cover', objectPosition: 'top', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
-          />
+          <div
+            style={{ height: '240px', overflow: 'hidden', borderRadius: '10px', border: '1px solid var(--border-card)', cursor: 'zoom-in' }}
+            onClick={() => setLightbox({ src: 'https://learn.microsoft.com/en-us/azure/azure-vmware/media/native-connectivity/native-connect-on-premises.png', alt: 'Azure VMware Solution Gen 2 - Virtual Network Model' })}
+          >
+            <img
+              src="https://learn.microsoft.com/en-us/azure/azure-vmware/media/native-connectivity/native-connect-on-premises.png"
+              alt="Azure VMware Solution Gen 2 native Virtual Network connectivity diagram"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block', transition: 'transform 0.3s ease' }}
+              onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.03)')}
+              onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
+            />
+          </div>
           <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)', lineHeight: 1.4 }}>
-            // Gen 2 — Native Azure VNet Integration · Source: Microsoft Learn
+            // Gen 2 — Native Azure VNet Integration · Source: Microsoft Learn · <span style={{ color: '#60a5fa' }}>click to zoom</span>
           </p>
         </div>
       </div>
@@ -151,14 +185,16 @@ export default function AvsGen1VsGen2Content() {
         Microsoft handles the physical infrastructure, physical security, hardware failures, ESXi host patching, VMware NSX, vSAN, vCenter Server, and HCX Manager. You are responsible for things like your VMs, Guest OS, applications, identity management, and connecting to your VNet and the internet. The matrix below makes this clear:
       </p>
 
-      <div style={{ margin: '1.5rem 0 1rem' }}>
+      <div style={{ margin: '1.5rem 0 1rem', cursor: 'zoom-in' }} onClick={() => setLightbox({ src: 'https://learn.microsoft.com/en-us/azure/azure-vmware/media/introduction/azure-introduction-shared-responsibility-matrix.png', alt: 'Azure VMware Solution Shared Responsibility Matrix' })}>
         <img
           src="https://learn.microsoft.com/en-us/azure/azure-vmware/media/introduction/azure-introduction-shared-responsibility-matrix.png"
           alt="Azure VMware Solution Shared Responsibility Matrix"
-          style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
+          style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block', transition: 'transform 0.3s ease' }}
+          onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.01)')}
+          onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
         />
         <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
-          Azure VMware Solution — Shared Responsibility Matrix · Source: Microsoft Learn
+          Azure VMware Solution — Shared Responsibility Matrix · Source: Microsoft Learn · <span style={{ color: '#60a5fa' }}>click to zoom</span>
         </p>
       </div>
 
