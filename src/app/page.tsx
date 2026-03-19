@@ -11,7 +11,7 @@ export default function Home() {
             Hi, I&apos;m PJ<span style={{ color: '#f97316' }}>.</span>
           </h1>
           <p style={{ fontSize: '17px', color: 'var(--text-muted)', maxWidth: '500px', lineHeight: 1.7, marginBottom: '20px' }}>
-            A fully certified Microsoft Solutions Architect with a passion for sharing knowledge and practical expertise in Azure, DevOps, and modern application design. This blog focuses on actionable tips, in-depth explorations, and real-world experiences across cloud architecture and software development.
+            A fully certified Microsoft Solutions Architect with a passion for sharing knowledge and practical expertise in Azure, DevOps, and modern application architecture. This blog focuses on actionable tips, in-depth explorations, and real-world experiences across cloud technologies. I also enjoy tinkering with AI, experimenting with new tools, and exploring how intelligent systems can enhance real-world solutions.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--text-muted)', fontSize: '15px' }}>
             <span style={{ fontFamily: 'var(--font-mono)' }}>Social Links:</span>
