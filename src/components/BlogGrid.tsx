@@ -2,9 +2,9 @@
 import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { posts, placeholderTags } from '@/data/content'
+import { posts } from '@/data/content'
 
-const allTags = ['All', ...Array.from(new Set(posts.flatMap(p => p.tags))), ...placeholderTags]
+const allTags = ['All', ...Array.from(new Set(posts.flatMap(p => p.tags)))]
 
 export default function BlogGrid() {
   const [search, setSearch] = useState('')

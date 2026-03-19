@@ -20,8 +20,6 @@ export interface Event {
   registerUrl: string
 }
 
-export const placeholderTags = ['Azure VMware Solution', 'Microsoft Foundry']
-
 export const posts: Post[] = [
   {
     slug: 'avs-gen1-vs-gen2',
