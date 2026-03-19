@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import Image from 'next/image'
 import ThemeToggle from './ThemeToggle'
 
 const links = [
@@ -19,7 +18,6 @@ export default function Nav() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <Image src="/logo.png" alt="CloudStack" width={40} height={40} style={{ objectFit: 'contain' }} />
           <span style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
             Cloud<span style={{ color: '#0062f5' }}>Stack</span>
           </span>
