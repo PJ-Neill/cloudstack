@@ -39,7 +39,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '20px' }}>{post.excerpt}</p>
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-full overflow-hidden" style={{ border: '1px solid rgba(0,98,245,0.3)' }}>
-            <Image src="/avatar.png" alt="PJ Neill" width={36} height={36} style={{ objectFit: 'cover', objectPosition: 'top' }} />
+            <Image src="/avatar.png" alt="PJ" width={36} height={36} style={{ objectFit: 'cover', objectPosition: 'top' }} />
           </div>
           <div>
             <p style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text-secondary)' }}>Cloud Stack</p>

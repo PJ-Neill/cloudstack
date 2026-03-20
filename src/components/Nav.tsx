@@ -21,7 +21,7 @@ export default function Nav() {
           <span style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
             Cloud<span style={{ color: '#0062f5' }}>Stack</span>
           </span>
-          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-faint)', marginLeft: '6px', fontWeight: 400 }}>// by PJ Neill</span>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-faint)', marginLeft: '6px', fontWeight: 400 }}>// by PJ</span>
         </Link>
 
         {/* Desktop Nav */}
