@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'hcx-network-extensions',
+    title: 'HCX L2 Network Extensions, L3 Gateway Cutover and MON: What You Need to Know Before You Start',
+    excerpt: 'HCX Network Extension lets you stretch your on-premises L2 networks directly into Azure VMware Solution. No re-IP. No downtime. But it comes with a set of constraints that will catch you out if you go in blind.',
+    date: 'Mar 23, 2026',
+    readTime: '8 min read',
+    tags: ['Azure VMware Solution', 'HCX'],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+  },
+  {
     slug: 'avs-gen1-vs-gen2',
     title: 'Azure VMware Solution: Gen 1 vs Gen 2 - What\'s Actually Changed?',
     excerpt: 'Azure VMware Solution Generation 2 now deploys inside an Azure Virtual Network. Here\'s what\'s changed, what to watch out for, and whether you should move.',

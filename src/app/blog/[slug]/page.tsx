@@ -4,9 +4,11 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { posts } from '@/data/content'
 import AvsGen1VsGen2Content from '@/data/posts/avs-gen1-vs-gen2'
+import HcxNetworkExtensionsContent from '@/data/posts/hcx-network-extensions'
 
 const postContent: Record<string, React.ComponentType> = {
   'avs-gen1-vs-gen2': AvsGen1VsGen2Content,
+  'hcx-network-extensions': HcxNetworkExtensionsContent,
 }
 
 export async function generateStaticParams() {
