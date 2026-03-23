@@ -28,7 +28,7 @@ export const posts: Post[] = [
     date: 'Mar 23, 2026',
     readTime: '8 min read',
     tags: ['Azure VMware Solution', 'HCX'],
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    image: '/hcx-cover.png',
   },
   {
     slug: 'avs-gen1-vs-gen2',
