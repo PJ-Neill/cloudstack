@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { posts } from '@/data/content'
 import AvsGen1VsGen2Content from '@/data/posts/avs-gen1-vs-gen2'
+import Comments from '@/components/Comments'
 import HcxNetworkExtensionsContent from '@/data/posts/hcx-network-extensions'
 
 const postContent: Record<string, React.ComponentType> = {
@@ -95,6 +96,8 @@ az deployment group create \\
         <div className="flex flex-wrap gap-2 mt-10 pt-8" style={{ borderTop: '1px solid var(--border-card)' }}>
           {post.tags.map(t => <span key={t} className="tag">{t}</span>)}
         </div>
+
+        <Comments />
       </div>
 
       {/* Related posts */}
