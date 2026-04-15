@@ -28,7 +28,7 @@ export const posts: Post[] = [
     date: 'Apr 2, 2026',
     readTime: '10 min read',
     tags: ['Azure VMware Solution', 'HCX'],
-    image: '/hcx-cover.png',
+    image: '/hcx-migration-cover.png',
   },
   {
     slug: 'hcx-network-extensions',
