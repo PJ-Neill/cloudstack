@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'hcx-migration-types',
+    title: 'HCX Migration Types: RAV, Bulk, vMotion, Cold and OSAM',
+    excerpt: 'HCX gives you five ways to move workloads into Azure VMware Solution. Pick the wrong one and you\'ll either burn your maintenance window or wonder why your migration is crawling at 3am.',
+    date: 'Apr 2, 2026',
+    readTime: '10 min read',
+    tags: ['Azure VMware Solution', 'HCX'],
+    image: '/hcx-cover.png',
+  },
+  {
     slug: 'hcx-network-extensions',
     title: 'HCX L2 Network Extensions, L3 Gateway Cutover and MON: What You Need to Know Before You Start',
     excerpt: 'HCX Network Extension lets you stretch your on-premises L2 networks directly into Azure VMware Solution. No re-IP. No downtime. But it comes with a set of constraints that will catch you out if you go in blind.',
