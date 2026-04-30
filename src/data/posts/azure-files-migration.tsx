@@ -40,7 +40,7 @@ export default function AzureFilesMigrationContent() {
       <h3 style={h3}>Architecture Overview</h3>
       <p style={p}>The end state: two Azure VMs running Windows Server form a failover cluster. The cluster hosts a DFS Namespace role. The namespace uses root consolidation to accept connections using the old file server&apos;s name. An Azure Load Balancer handles the static IP for the cluster client access point, since Azure doesn&apos;t support Gratuitous ARP. DNS is updated to point the old server name at the load balancer&apos;s frontend IP. SPNs are moved from the old computer object to the DFS cluster. Azure Files sits at the other end as the actual storage target.</p>
 
-      <Screenshot src={IMG + 'dfs-architecture.png'} alt="DFS root consolidation architecture diagram" caption="DFS Namespace root consolidation architecture — users connect to the old UNC path, DNS resolves to the Azure Load Balancer, which fronts the two-node DFS cluster, which refers traffic to Azure Files." onZoom={zoom} />
+      <Screenshot src={IMG + 'dfs-architecture.png'} alt="DFS root consolidation architecture diagram" caption="DFS Namespace root consolidation architecture. Users connect to the old UNC path, DNS resolves to the Azure Load Balancer, which fronts the two-node DFS cluster, which refers traffic to Azure Files." onZoom={zoom} />
 
       <h2 style={h2}>Known Issue: WebDAV and the WebClient Service</h2>
 
@@ -59,7 +59,7 @@ export default function AzureFilesMigrationContent() {
       <h2 style={h2}>Step-by-Step: Building the DFS Cluster</h2>
 
       <h3 style={h3}>Create the Quorum Shared Managed Disk</h3>
-      <p style={p}>You&apos;ll need two VMs with no data disks to start. Create the first shared managed disk — the cluster quorum disk — with these parameters:</p>
+      <p style={p}>You&apos;ll need two VMs with no data disks to start. Create the first shared managed disk (the cluster quorum disk) with these parameters:</p>
       <p style={p}>Same region as your VMs. <code style={code}>CreateOption</code> as Empty. <code style={code}>MaxSharesCount</code> as 2. <code style={code}>DiskSizeGB</code> as 8GB. You only need it for quorum.</p>
 
       <Screenshot src={IMG + 'image1.png'} alt="Creating the quorum shared managed disk in Azure" caption="Creating the quorum shared managed disk" onZoom={zoom} />
@@ -71,7 +71,7 @@ export default function AzureFilesMigrationContent() {
 
       <h3 style={h3}>Install Failover Clustering</h3>
       <p style={p}>On both DFS servers, open PowerShell as Administrator and run:</p>
-      <CodeBlock label="PowerShell — both servers">{`Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools`}</CodeBlock>
+      <CodeBlock label="PowerShell, both servers">{`Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools`}</CodeBlock>
       <Screenshot src={IMG + 'image5.png'} alt="Installing Failover Clustering feature via PowerShell" caption="Installing the Failover Clustering feature on both servers" onZoom={zoom} />
 
       <h3 style={h3}>Create the Windows Cluster</h3>
@@ -89,7 +89,7 @@ export default function AzureFilesMigrationContent() {
       <Screenshot src={IMG + 'image11.png'} alt="Renaming the disk to Quorum Disk in Failover Cluster Manager" caption="Renaming the disk to Quorum Disk" onZoom={zoom} />
 
       <h3 style={h3}>Create the DFS Data Disk</h3>
-      <p style={p}>Now create your second shared managed disk — the DFS Namespace data disk. Create this as a Premium SSD with these parameters:</p>
+      <p style={p}>Now create your second shared managed disk, the DFS Namespace data disk. Create this as a Premium SSD with these parameters:</p>
       <p style={p}>Same region as your VMs. <code style={code}>CreateOption</code> as Empty. <code style={code}>MaxSharesCount</code> as 2. <code style={code}>DiskSizeGB</code> as 256GB (P15).</p>
       <Screenshot src={IMG + 'image12.png'} alt="Creating the DFS Namespace data disk, Premium SSD P15" caption="Creating the DFS Namespace data disk, Premium SSD P15" onZoom={zoom} />
       <p style={p}>Attach the DFS data disk to both VMs the same way you did for the quorum disk.</p>
@@ -99,7 +99,7 @@ export default function AzureFilesMigrationContent() {
 
       <h3 style={h3}>Install the DFS Role</h3>
       <p style={p}>On both DFS servers, open PowerShell as Administrator and run:</p>
-      <CodeBlock label="PowerShell — both servers">{`Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"`}</CodeBlock>
+      <CodeBlock label="PowerShell, both servers">{`Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"`}</CodeBlock>
       <p style={p}>Once installed, go to one of your cluster nodes, open Cluster Disks, and choose to add the new DFS data disk.</p>
       <Screenshot src={IMG + 'image15.png'} alt="Adding the DFS data disk to the cluster" caption="Adding the DFS data disk to the cluster" onZoom={zoom} />
       <p style={p}>Double-click the new disk and give it a name.</p>
@@ -144,7 +144,7 @@ export default function AzureFilesMigrationContent() {
       <Screenshot src={IMG + 'image30.png'} alt="HA Ports load balancing rule and TCP 135 health probe" caption="HA Ports load balancing rule with TCP 135 health probe" onZoom={zoom} />
       <p style={p}>Once the Load Balancer is created, navigate to Insights and verify both backend servers show as healthy.</p>
       <Screenshot src={IMG + 'image31.png'} alt="Load Balancer Insights showing both backend nodes as healthy" caption="Both DFS cluster nodes showing as healthy in Load Balancer Insights" onZoom={zoom} />
-      <p style={p}>Now go back and try browsing to your DFS cluster UNC path. It should now work — empty for now but accessible.</p>
+      <p style={p}>Now go back and try browsing to your DFS cluster UNC path. It should now work, empty for now but accessible.</p>
       <Screenshot src={IMG + 'image32.png'} alt="DFS cluster UNC path now accessible" caption="DFS cluster UNC path now accessible" onZoom={zoom} />
 
       <h2 style={h2}>Configuring DFS Namespace Root Consolidation</h2>
@@ -152,7 +152,7 @@ export default function AzureFilesMigrationContent() {
 
       <h3 style={h3}>Enable the Registry Keys for Root Consolidation</h3>
       <p style={p}>On each DFS cluster node, run the following PowerShell commands as Administrator, then reboot each server one at a time. Monitor Failover Cluster Manager to make sure each node is back and operational before moving to the next.</p>
-      <CodeBlock label="PowerShell — run on each cluster node then reboot">{`New-Item -Type Registry -Path "HKLM:SYSTEM\\CurrentControlSet\\Services\\Dfs"
+      <CodeBlock label="PowerShell, run on each cluster node then reboot">{`New-Item -Type Registry -Path "HKLM:SYSTEM\\CurrentControlSet\\Services\\Dfs"
 New-Item -Type Registry -Path "HKLM:SYSTEM\\CurrentControlSet\\Services\\Dfs\\Parameters"
 New-Item -Type Registry -Path "HKLM:SYSTEM\\CurrentControlSet\\Services\\Dfs\\Parameters\\Replicated"
 Set-ItemProperty -Path "HKLM:SYSTEM\\CurrentControlSet\\Services\\Dfs\\Parameters\\Replicated" -Name "ServerConsolidationRetry" -Value 1`}</CodeBlock>
@@ -182,7 +182,7 @@ Set-ItemProperty -Path "HKLM:SYSTEM\\CurrentControlSet\\Services\\Dfs\\Parameter
       </Callout>
 
       <p style={p}>Then using a Domain Administrator account, run the following in an Administrator Command Prompt to remove the SPNs from the old file server. Update the commands to reflect your actual server name and FQDN.</p>
-      <CodeBlock label="Command Prompt — remove SPNs from old server">{`setspn -d HOST/oldfileserver oldfileserver
+      <CodeBlock label="Command Prompt, remove SPNs from old server">{`setspn -d HOST/oldfileserver oldfileserver
 setspn -d HOST/oldfileserver.yourdomain.com oldfileserver`}</CodeBlock>
 
       <p style={p}>Add those SPNs to the DFS cluster client access point:</p>
@@ -191,12 +191,12 @@ setspn -d HOST/oldfileserver.yourdomain.com oldfileserver`}</CodeBlock>
         <strong>Always use <code style={{ ...code, background: 'rgba(245,158,11,0.15)' }}>setspn -S</code> over <code style={{ ...code, background: 'rgba(245,158,11,0.15)' }}>setspn -A</code>.</strong> The <code style={{ ...code, background: 'rgba(245,158,11,0.15)' }}>-S</code> flag checks for existing duplicate SPNs before adding, preventing broken authentication. Never use <code style={{ ...code, background: 'rgba(245,158,11,0.15)' }}>-A</code> as it will add the SPN regardless of duplicates, which can cause Kerberos failures that are hard to diagnose.
       </Callout>
 
-      <CodeBlock label="Command Prompt — add SPNs to DFS cluster">{`setspn -s HOST/oldfileserver DFS-CLUSTER-01
+      <CodeBlock label="Command Prompt, add SPNs to DFS cluster">{`setspn -s HOST/oldfileserver DFS-CLUSTER-01
 setspn -s HOST/oldfileserver.yourdomain.com DFS-CLUSTER-01`}</CodeBlock>
 
 
       <p style={p}>Verify the SPNs were added correctly:</p>
-      <CodeBlock label="Command Prompt — verify">{`setspn -l DFS-CLUSTER-01`}</CodeBlock>
+      <CodeBlock label="Command Prompt, verify">{`setspn -l DFS-CLUSTER-01`}</CodeBlock>
       <Screenshot src={IMG + 'image38.png'} alt="SPN list confirming old server host names now registered on DFS cluster" caption="SPNs from the old file server now correctly registered on the DFS cluster" onZoom={zoom} />
 
       <h3 style={h3}>Test the UNC Path</h3>
