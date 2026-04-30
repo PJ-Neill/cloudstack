@@ -57,7 +57,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       {/* Cover image */}
       <div className="max-w-4xl mx-auto px-6 mb-12">
         <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: '280px', border: '1px solid rgba(0,98,245,0.15)' }}>
-          <Image src={post.image} alt={post.title} fill style={{ objectFit: 'cover' }} />
+          <Image src={post.image} alt={post.title} fill style={{ objectFit: 'contain' }} />
         </div>
       </div>
 
