@@ -28,7 +28,7 @@ export const posts: Post[] = [
     date: 'Apr 30, 2026',
     readTime: '15 min read',
     tags: ['Azure Files', 'Migration'],
-    image: '/posts/azure-files-migration/dfs-architecture.png',
+    image: '/azure-files-cover.webp',
   },
   {
     slug: 'hcx-migration-types',
