@@ -194,7 +194,6 @@ setspn -d HOST/oldfileserver.yourdomain.com oldfileserver`}</CodeBlock>
       <CodeBlock label="Command Prompt — add SPNs to DFS cluster">{`setspn -s HOST/oldfileserver DFS-CLUSTER-01
 setspn -s HOST/oldfileserver.yourdomain.com DFS-CLUSTER-01`}</CodeBlock>
 
-      <Screenshot src={IMG + 'image37.png'} alt="Running setspn commands to add SPNs to the DFS cluster" caption="Adding the old server SPNs to the DFS cluster object" onZoom={zoom} />
 
       <p style={p}>Verify the SPNs were added correctly:</p>
       <CodeBlock label="Command Prompt — verify">{`setspn -l DFS-CLUSTER-01`}</CodeBlock>
