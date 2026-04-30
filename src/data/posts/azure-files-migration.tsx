@@ -209,6 +209,11 @@ setspn -s HOST/oldfileserver.yourdomain.com DFS-CLUSTER-01`}</CodeBlock>
       <p style={p}>DFS root consolidation is the right approach when you need to preserve old UNC paths completely, without touching clients, scripts, or application configs. It&apos;s more infrastructure to manage than a simple DNS alias, but once it&apos;s in place it&apos;s invisible to end users.</p>
       <p style={p}>The key things to get right are the load balancer (Azure&apos;s lack of Gratuitous ARP will bite you if you skip it), the registry keys for root consolidation on both nodes, the # prefix on your namespace name, and the SPN migration. Get those four things right and the rest follows.</p>
 
+      <div style={{ marginTop: '2rem', padding: '1rem 1.4rem', background: 'var(--surface-card)', border: '1px solid var(--border-card)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <span style={{ color: '#60a5fa', fontWeight: 700, fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase', flexShrink: 0 }}>Next up</span>
+        <span style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Using custom domain names for Azure file shares →</span>
+      </div>
+
     </div>
   )
 }
