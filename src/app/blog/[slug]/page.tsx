@@ -6,8 +6,10 @@ import { posts } from '@/data/content'
 import AvsGen1VsGen2Content from '@/data/posts/avs-gen1-vs-gen2'
 import HcxNetworkExtensionsContent from '@/data/posts/hcx-network-extensions'
 import HcxMigrationTypesContent from '@/data/posts/hcx-migration-types'
+import AzureFilesMigrationContent from '@/data/posts/azure-files-migration'
 
 const postContent: Record<string, React.ComponentType> = {
+  'azure-files-migration': AzureFilesMigrationContent,
   'avs-gen1-vs-gen2': AvsGen1VsGen2Content,
   'hcx-network-extensions': HcxNetworkExtensionsContent,
   'hcx-migration-types': HcxMigrationTypesContent,

@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'azure-files-migration',
+    title: 'Azure Files Migration While Preserving UNC Paths: The Ultimate Guide',
+    excerpt: 'Migrating file shares to Azure Files is the easy part. Keeping your UNC paths intact so nothing breaks is where it gets interesting.',
+    date: 'Apr 30, 2026',
+    readTime: '15 min read',
+    tags: ['Azure Files', 'Migration'],
+    image: '/posts/azure-files-migration/dfs-architecture.png',
+  },
+  {
     slug: 'hcx-migration-types',
     title: 'HCX Migration Types: RAV, Bulk, vMotion, Cold and OSAM',
     excerpt: 'HCX gives you five ways to move workloads into Azure VMware Solution. Pick the wrong one and you\'ll either burn your maintenance window or wonder why your migration is crawling at 3am.',

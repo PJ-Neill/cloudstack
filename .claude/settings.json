@@ -10,7 +10,8 @@
       "Bash(gh api:*)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\pjnei\\Downloads"
+      "C:\\Users\\pjnei\\Downloads",
+      "C:\\Users\\pjnei\\Downloads\\azure-files-migration_17"
     ]
   }
 }
