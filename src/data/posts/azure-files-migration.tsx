@@ -62,11 +62,9 @@ export default function AzureFilesMigrationContent() {
       <p style={p}>You&apos;ll need two VMs with no data disks to start. Create the first shared managed disk — the cluster quorum disk — with these parameters:</p>
       <p style={p}>Same region as your VMs. <code style={code}>CreateOption</code> as Empty. <code style={code}>MaxSharesCount</code> as 2. <code style={code}>DiskSizeGB</code> as 8GB. You only need it for quorum.</p>
 
-      <ScreenshotGrid>
-        <Screenshot src={IMG + 'image1.png'} alt="Creating the quorum shared managed disk in Azure" caption="Creating the quorum shared managed disk" onZoom={zoom} />
-        <Screenshot src={IMG + 'image2.png'} alt="Attaching the quorum disk to the first VM" caption="Attaching the quorum disk to both VMs" onZoom={zoom} />
-        <Screenshot src={IMG + 'image3.png'} alt="Quorum disk attached to the second VM" caption="Quorum disk attached to both VMs" onZoom={zoom} />
-      </ScreenshotGrid>
+      <Screenshot src={IMG + 'image1.png'} alt="Creating the quorum shared managed disk in Azure" caption="Creating the quorum shared managed disk" onZoom={zoom} />
+      <Screenshot src={IMG + 'image2.png'} alt="Attaching the quorum disk to the first VM" caption="Attaching the quorum disk to both VMs" onZoom={zoom} />
+      <Screenshot src={IMG + 'image3.png'} alt="Quorum disk attached to the second VM" caption="Quorum disk attached to both VMs" onZoom={zoom} />
 
       <p style={p}>On both servers, open Disk Management, initialise the disk (GPT), partition, format, and assign drive letter <strong>Q</strong> for Quorum. The cluster will handle disk ownership once it&apos;s set up.</p>
       <Screenshot src={IMG + 'image4.png'} alt="Disk Management initialising and formatting the quorum disk" caption="Initialising and formatting the quorum disk. Assign drive letter Q on both servers." onZoom={zoom} />

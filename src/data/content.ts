@@ -27,7 +27,7 @@ export const posts: Post[] = [
     excerpt: 'Migrating file shares to Azure Files is the easy part. Keeping your UNC paths intact so nothing breaks is where it gets interesting.',
     date: 'Apr 30, 2026',
     readTime: '15 min read',
-    tags: ['Azure Files', 'Migration'],
+    tags: ['Azure Files'],
     image: '/azure-files-cover.webp',
   },
   {
