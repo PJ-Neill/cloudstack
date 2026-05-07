@@ -61,8 +61,7 @@ export default function AlzCorpOnlineLocalContent() {
 
       <h2 style={h2}>Already in the ALZ Accelerator</h2>
       <p style={p}>These changes shipped in <code style={code}>platform/alz/2026.04.2</code> and are already reflected in the ALZ Accelerator. New deployments via <a href="https://aka.ms/alz/accelerator" target="_blank" rel="noopener noreferrer" style={link}>aka.ms/alz/accelerator</a> will get the Local management group out of the box.</p>
-      <p style={p}>If you&apos;re on an existing deployment, Microsoft has published upgrade guidance for both Terraform and Bicep. The Terraform path is at <a href="https://azure.github.io/Azure-Landing-Zones/terraform/howtos/update" target="_blank" rel="noopener noreferrer" style={link}>Azure-Landing-Zones/terraform/howtos/update</a> and the Bicep equivalent at the Azure Landing Zones docs site. The Portal accelerator update was due to follow shortly after the library release.</p>
-      <p style={p}>The full announcement from the Azure Governance and Management team is on the <a href="https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/new-local-management-group-for-alz--updated-sovereign-policies-for-slz/4515156" target="_blank" rel="noopener noreferrer" style={link}>Microsoft Tech Community blog</a>.</p>
+      <p style={p}>If you&apos;re on an existing deployment, Microsoft has published upgrade guidance for both Terraform and Bicep. The Terraform path is at <a href="https://azure.github.io/Azure-Landing-Zones/terraform/howtos/update" target="_blank" rel="noopener noreferrer" style={link}>Azure-Landing-Zones/terraform/howtos/update</a> and the Bicep equivalent at the Azure Landing Zones docs site.</p>
 
     </div>
   )
