@@ -3,6 +3,11 @@ export default function AlzCorpOnlineLocalContent() {
     <div style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.85 }}>
 
       <p style={p}>Corp. Short for corporate. &quot;Corporate&quot; just reminds me of Michael Scott from The Office 😂. It&apos;s an Americanism, really, usually interchangeable with &quot;company&quot; or &quot;organisation&quot; depending on where you&apos;re from.</p>
+
+      <div style={{ margin: '1.25rem 0' }}>
+        <img src="/alz-img-1.webp" alt="Michael Scott - I am so used to fighting corporate that I forget that I am corporate" style={{ width: '100%', borderRadius: '10px', display: 'block' }} />
+      </div>
+
       <p style={p}>But here we are. Corp exists, it&apos;s staying, and as of April 2026 it has a new sibling: the <strong>Local</strong> management group. Microsoft added it to the ALZ conceptual architecture. Worth understanding what they actually mean.</p>
 
       <h2 style={h2}>The Management Group Hierarchy</h2>
@@ -11,7 +16,7 @@ export default function AlzCorpOnlineLocalContent() {
 
       <div style={{ margin: '1.5rem 0' }}>
         <img
-          src="/alz-hierarchy.webp"
+          src="/alz-hierarchy.svg"
           alt="Azure Landing Zone management group hierarchy showing Corp, Online and Local"
           style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
         />
