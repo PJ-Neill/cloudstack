@@ -20,16 +20,16 @@ export default function AlzCorpOnlineLocalContent() {
       <h2 style={h2}>Corp (Yes, That One)</h2>
       <p style={p}>&quot;Corp&quot; is short for corporate network connectivity. That&apos;s it. Nothing to do with your organisation structure, nothing to do with the word &quot;corporate&quot; in any cultural sense. It&apos;s the management group for workloads that require private connectivity back to on-premises or to other landing zones via the hub.</p>
       <p style={p}>If your workload needs to talk to an on-premises SQL server, hit a shared service sitting in another subscription, or route through your hub firewall, Corp is the right home. In the standard ALZ vending model, a Corp subscription gets a spoke VNet pre-created and peered back to the hub. It&apos;s ready for private traffic from day one.</p>
+      <Callout icon="⚠️" title="Gotcha: Corp doesn't mean &quot;private only&quot;" type="warn">
+        Workloads in Corp can still serve traffic from the internet. Corp means private hub connectivity is available and policy enforces private DNS. It doesn&apos;t mean nothing is public-facing.
+      </Callout>
+
       <p style={p}>From a policy perspective, Corp gets two guardrails that Online doesn&apos;t:</p>
       <ul style={ul}>
         <li>Public network access should be disabled for PaaS services</li>
         <li>Configure Azure PaaS services to use private DNS zones</li>
       </ul>
-      <p style={p}>Those two policies are the actual mechanical difference between Corp and Online. Everything else — RBAC, logging, tagging, security baselines — those are applied higher up the hierarchy and land on both.</p>
-
-      <Callout icon="⚠️" title="Gotcha: Corp doesn't mean &quot;private only&quot;" type="warn">
-        Workloads in Corp can still serve traffic from the internet. Corp means private hub connectivity is available and policy enforces private DNS. It doesn&apos;t mean nothing is public-facing.
-      </Callout>
+      <p style={p}>Those two policies are the actual mechanical difference between Corp and Online. Everything else, RBAC, logging, tagging, security baselines, those are applied higher up the hierarchy and land on both.</p>
 
       <Callout icon="💡" title="Policy exemptions exist for a reason" type="info">
         If a workload in Corp has one component that genuinely needs to be public, create a policy exemption, document it, and review it periodically. Moving the whole subscription to Online just to avoid the exemption creates worse problems, especially around DNS and private endpoint ownership.
@@ -38,11 +38,12 @@ export default function AlzCorpOnlineLocalContent() {
       <h2 style={h2}>Online</h2>
       <p style={p}>Online is for workloads without the private hub connectivity requirement. There&apos;s no pre-created spoke VNet, no peering to the hub, and the PaaS privacy policies don&apos;t apply. App teams have more freedom.</p>
       <p style={p}>That doesn&apos;t mean Online subscriptions are a free-for-all. Teams can still deploy their own VNets, private endpoints, and service endpoints. They just own those themselves rather than inheriting them from the platform. Their private DNS zones are local to the app, not linked to the central zones in the hub.</p>
-      <p style={p}>Good candidates for Online: SaaS-style workloads accessible over the internet, dev/test environments with no on-prem access requirement, and anything where the team wants to own its own network controls end-to-end.</p>
 
       <Callout icon="🚨" title="Gotcha: Online does not mean insecure" type="warn">
         Online workloads can be just as locked down as Corp ones. The distinction is whether they depend on central hub connectivity, not whether they&apos;re exposed to the internet.
       </Callout>
+
+      <p style={p}>Good candidates for Online: SaaS-style workloads accessible over the internet, dev/test environments with no on-prem access requirement, and anything where the team wants to own its own network controls end-to-end.</p>
 
       <h2 style={h2}>Local (The New One)</h2>
       <p style={p}>Microsoft has added a dedicated &quot;Local&quot; management group, and the name refers to <strong>Azure Local</strong>, not &quot;local&quot; in the general sense. It sits alongside Corp and Online under Landing Zones and is designed for two distinct scenarios.</p>
