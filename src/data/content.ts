@@ -24,7 +24,7 @@ export const posts: Post[] = [
   {
     slug: 'alz-corp-online-local',
     title: 'Corp, Online, and Now Local',
-    excerpt: 'Microsoft has added a new Local management group to the Azure Landing Zone hierarchy. Here\'s what Corp, Online, and Local mean.',
+    excerpt: 'Microsoft has added a new Local management group to the Azure Landing Zone hierarchy. Here\'s what Corp, Online, and Local mean to me.',
     date: 'May 7, 2026',
     readTime: '6 min read',
     tags: ['Azure Landing Zone', 'Azure Governance', 'Azure Local', 'Azure Policy'],
