@@ -7,7 +7,11 @@
       "Bash(find /c/Projects/cloudstack/src -type f \\\\\\(-name *.md -o -name *.mdx -o -name *.json \\\\\\))",
       "Bash(npx tsc:*)",
       "Bash(python -m json.tool)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(sed -n '1,391p' alz-corp-online-local_9.html)",
+      "Read(//tmp/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\pjnei\\Downloads",

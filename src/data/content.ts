@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'alz-corp-online-local',
+    title: 'Corp, Online, and Now Local',
+    excerpt: 'Microsoft has added a new Local management group to the Azure Landing Zone hierarchy. Here\'s what Corp, Online, and Local mean.',
+    date: 'May 7, 2026',
+    readTime: '6 min read',
+    tags: ['Azure Landing Zone', 'Azure Governance'],
+    image: '/alz-hierarchy.webp',
+  },
+  {
     slug: 'azure-files-migration',
     title: 'Azure Files Migration While Preserving UNC Paths: The Ultimate Guide',
     excerpt: 'Migrating file shares to Azure Files is the easy part. Keeping your UNC paths intact so nothing breaks is where it gets interesting.',
