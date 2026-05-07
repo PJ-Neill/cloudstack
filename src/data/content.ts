@@ -28,7 +28,7 @@ export const posts: Post[] = [
     date: 'May 7, 2026',
     readTime: '6 min read',
     tags: ['Azure Landing Zone', 'Azure Governance', 'Azure Local', 'Azure Policy'],
-    image: '/alz-hierarchy.svg',
+    image: '/alz-img-1.webp',
   },
   {
     slug: 'azure-files-migration',

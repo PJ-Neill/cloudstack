@@ -1,6 +1,23 @@
+'use client'
+import { useState, useEffect } from 'react'
+
 export default function AlzCorpOnlineLocalContent() {
+  const [lightbox, setLightbox] = useState<string | null>(null)
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setLightbox(null) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
     <div style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.85 }}>
+
+      {lightbox && (
+        <div onClick={() => setLightbox(null)} style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(6px)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out' }}>
+          <img src={lightbox} alt="Azure Landing Zone hierarchy" style={{ maxWidth: '92vw', maxHeight: '88vh', borderRadius: '10px', border: '1px solid var(--border-card)', boxShadow: '0 0 60px rgba(0,0,0,0.8)' }} />
+        </div>
+      )}
 
       <p style={p}>Corp. Short for corporate. &quot;Corporate&quot; just reminds me of Michael Scott from The Office 😂. It&apos;s an Americanism, really, usually interchangeable with &quot;company&quot; or &quot;organisation&quot; depending on where you&apos;re from.</p>
 
@@ -14,12 +31,17 @@ export default function AlzCorpOnlineLocalContent() {
       <p style={p}>The ALZ Landing Zones management group has always had two child groups: Corp and Online. The new architecture adds a third, sitting alongside them.</p>
       <p style={p}>Each group has different policy assignments, which is what actually defines their behaviour. The structure itself is just a container. It&apos;s the policies applied at each scope that make Corp feel different from Online.</p>
 
-      <div style={{ margin: '1.5rem 0' }}>
+      <div style={{ margin: '1.5rem 0', cursor: 'zoom-in' }} onClick={() => setLightbox('/alz-hierarchy.svg')}>
         <img
           src="/alz-hierarchy.svg"
           alt="Azure Landing Zone management group hierarchy showing Corp, Online and Local"
-          style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block' }}
+          style={{ width: '100%', borderRadius: '10px', border: '1px solid var(--border-card)', display: 'block', transition: 'transform 0.3s ease' }}
+          onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.01)')}
+          onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
         />
+        <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-subtle)', marginTop: '0.5rem', fontFamily: 'var(--font-mono)' }}>
+          Azure Landing Zone hierarchy · <span style={{ color: '#60a5fa' }}>click to zoom</span>
+        </p>
       </div>
 
       <h2 style={h2}>Corp (Yes, That One)</h2>
