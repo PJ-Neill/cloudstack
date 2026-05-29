@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'vwan-vs-hubspoke',
+    title: 'To vWAN or Not to vWAN',
+    excerpt: 'Every Azure networking design workshop eventually hits the same question: do we go hub-spoke or vWAN? This post works through when each pattern earns its place, what the cost picture actually looks like, and the mistakes architects make going either direction.',
+    date: 'May 29, 2026',
+    readTime: '15 min read',
+    tags: ['vWAN', 'Landing Zones', 'Architecture'],
+    image: '/vwan-cover.png',
+  },
+  {
     slug: 'alz-corp-online-local',
     title: 'Corp, Online, and Now Local',
     excerpt: 'Microsoft has added a new Local management group to the Azure Landing Zone hierarchy. Here\'s what Corp, Online, and Local mean to me.',

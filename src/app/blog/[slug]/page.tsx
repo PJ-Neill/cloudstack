@@ -8,8 +8,10 @@ import HcxNetworkExtensionsContent from '@/data/posts/hcx-network-extensions'
 import HcxMigrationTypesContent from '@/data/posts/hcx-migration-types'
 import AzureFilesMigrationContent from '@/data/posts/azure-files-migration'
 import AlzCorpOnlineLocalContent from '@/data/posts/alz-corp-online-local'
+import VwanVsHubSpokeContent from '@/data/posts/vwan-vs-hubspoke'
 
 const postContent: Record<string, React.ComponentType> = {
+  'vwan-vs-hubspoke': VwanVsHubSpokeContent,
   'alz-corp-online-local': AlzCorpOnlineLocalContent,
   'azure-files-migration': AzureFilesMigrationContent,
   'avs-gen1-vs-gen2': AvsGen1VsGen2Content,
