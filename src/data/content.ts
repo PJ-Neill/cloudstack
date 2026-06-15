@@ -28,7 +28,7 @@ export const posts: Post[] = [
     date: 'Jun 11, 2026',
     readTime: '7 min read',
     tags: ['Azure Migrate', 'Azure Files', 'Azure Storage', 'Copilot', 'AI', 'Agents'],
-    image: '/azure-migrate-cover.png',
+    image: '/azure-files-cover.webp',
   },
   {
     slug: 'vwan-vs-hubspoke',
