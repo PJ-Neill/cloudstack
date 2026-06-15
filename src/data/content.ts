@@ -27,8 +27,8 @@ export const posts: Post[] = [
     excerpt: 'Azure Migrate can now discover and assess your SMB and NFS file shares, and the Copilot Migration Agent will run the whole migration to Azure Files end to end. Here\'s what\'s changed and what to watch for.',
     date: 'Jun 11, 2026',
     readTime: '7 min read',
-    tags: ['Azure Migrate', 'Azure Files', 'Azure Storage'],
-    image: '/azure-files-cover.webp',
+    tags: ['Azure Migrate', 'Azure Files', 'Azure Storage', 'Copilot', 'AI', 'Agents'],
+    image: '/azure-migrate-cover.png',
   },
   {
     slug: 'vwan-vs-hubspoke',
