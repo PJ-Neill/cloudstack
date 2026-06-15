@@ -9,8 +9,10 @@ import HcxMigrationTypesContent from '@/data/posts/hcx-migration-types'
 import AzureFilesMigrationContent from '@/data/posts/azure-files-migration'
 import AlzCorpOnlineLocalContent from '@/data/posts/alz-corp-online-local'
 import VwanVsHubSpokeContent from '@/data/posts/vwan-vs-hubspoke'
+import AzureMigrateFileSharesContent from '@/data/posts/azure-migrate-file-shares'
 
 const postContent: Record<string, React.ComponentType> = {
+  'azure-migrate-file-shares': AzureMigrateFileSharesContent,
   'vwan-vs-hubspoke': VwanVsHubSpokeContent,
   'alz-corp-online-local': AlzCorpOnlineLocalContent,
   'azure-files-migration': AzureFilesMigrationContent,

@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'azure-migrate-file-shares',
+    title: 'Azure Migrate Now Does File Shares',
+    excerpt: 'Azure Migrate can now discover and assess your SMB and NFS file shares, and the Copilot Migration Agent will run the whole migration to Azure Files end to end. Here\'s what\'s changed and what to watch for.',
+    date: 'Jun 11, 2026',
+    readTime: '7 min read',
+    tags: ['Azure Migrate', 'Azure Files', 'Azure Storage'],
+    image: '/azure-files-cover.webp',
+  },
+  {
     slug: 'vwan-vs-hubspoke',
     title: 'To vWAN or Not to vWAN',
     excerpt: 'Every Azure networking design workshop eventually hits the same question: do we go hub-spoke or vWAN? This post works through when each pattern earns its place, what the cost picture actually looks like, and the mistakes architects make going either direction.',
