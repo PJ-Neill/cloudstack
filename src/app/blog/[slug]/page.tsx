@@ -10,8 +10,10 @@ import AzureFilesMigrationContent from '@/data/posts/azure-files-migration'
 import AlzCorpOnlineLocalContent from '@/data/posts/alz-corp-online-local'
 import VwanVsHubSpokeContent from '@/data/posts/vwan-vs-hubspoke'
 import AzureMigrateFileSharesContent from '@/data/posts/azure-migrate-file-shares'
+import AlzTerraformAcceleratorContent from '@/data/posts/alz-terraform-accelerator'
 
 const postContent: Record<string, React.ComponentType> = {
+  'alz-terraform-accelerator': AlzTerraformAcceleratorContent,
   'azure-migrate-file-shares': AzureMigrateFileSharesContent,
   'vwan-vs-hubspoke': VwanVsHubSpokeContent,
   'alz-corp-online-local': AlzCorpOnlineLocalContent,

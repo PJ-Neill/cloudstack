@@ -22,6 +22,15 @@ export interface Event {
 
 export const posts: Post[] = [
   {
+    slug: 'alz-terraform-accelerator',
+    title: 'The ALZ Terraform Accelerator Explained',
+    excerpt: "Microsoft's Terraform Accelerator takes you from an empty tenant to a CI/CD-backed Azure Landing Zone without building all the plumbing yourself.",
+    date: 'Jul 14, 2026',
+    readTime: '5 min read',
+    tags: ['Azure Landing Zones', 'Terraform', 'IaC', 'Azure Governance'],
+    image: '/alz-terraform-cover.png',
+  },
+  {
     slug: 'azure-migrate-file-shares',
     title: 'Azure Migrate Now Does File Shares',
     excerpt: 'Azure Migrate can now discover and assess your SMB and NFS file shares, and the Copilot Migration Agent will run the whole migration to Azure Files end to end. Here\'s what\'s changed and what to watch for.',
